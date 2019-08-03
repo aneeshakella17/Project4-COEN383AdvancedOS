@@ -52,6 +52,10 @@ public class Main {
             }
             runningList.add(p);
         }
+        for(int i = 25; i < 150; i++){
+            Process p = new Process(i);
+            waitingList.add(p);
+        }
     }
 
     public static double start(ScheduleAlgorithm algorithm){
@@ -59,9 +63,6 @@ public class Main {
 
             if (i == 0) {
                 setup();
-            } else if (i < 125) {
-                Process p = new Process(i);
-                waitingList.add(p);
             }
 
             if(waitingList.size() > 0 && FreeList.countFreeEntries() >= 4){
